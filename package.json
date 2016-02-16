@@ -13,7 +13,8 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "xo && nyc ava"
+    "test": "xo && nyc ava",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "files": [
     "app"
@@ -27,13 +28,15 @@
     "generator"
   ],
   "dependencies": {
+    "valid-file": "0.0.1",
     "yeoman-generator": "^0.22.5"
   },
   "devDependencies": {
     "ava": "^0.11.0",
+    "coveralls": "^2.11.6",
+    "nyc": "^5.0.1",
     "pify": "^2.3.0",
     "xo": "^0.12.1",
-    "nyc": "^5.0.1",
     "yeoman-assert": "^2.1.1",
     "yeoman-test": "^1.1.0"
   }

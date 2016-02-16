@@ -6,6 +6,7 @@ import pify from 'pify';
 import fullPkg from './test/_package_full.json';
 import noDepsPkg from './test/_package_nodeps.json';
 import withDepsPkg from './test/_package_withdeps.json';
+import messages from './app/messages.js';
 import fs from 'fs';
 
 let generator;
@@ -31,6 +32,7 @@ test.serial('writes to files', async () => {
 	assert.fileContent('.gitignore', /coverage/);
 	assert.fileContent('package.json', /"xo && nyc ava"/);
 	assert.fileContent('package.json', /"nyc":/);
+	assert(typeof generator.message === 'string');
 });
 
 test.serial('adds dependencies if empty', async () => {
@@ -60,4 +62,11 @@ test.serial('ignore pre-existing gitignore values', async () => {
 
 	assert.fileContent('.gitignore', '.nyc_output coverage');
 	assert.noFileContent('.gitignore', /\\n\\r/g);
+});
+
+test('messages', t => {
+	t.true(typeof messages.added === 'function' && typeof messages.added('str') === 'string');
+	t.true(typeof messages.exists === 'function' && typeof messages.exists('str') === 'string');
+	t.true(typeof messages.error === 'function' && typeof messages.error('str') === 'string');
+	t.true(typeof messages.install === 'function' && typeof messages.install('str') === 'string');
 });

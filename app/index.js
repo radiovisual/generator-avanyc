@@ -1,5 +1,5 @@
 'use strict';
-const fileExists = require('./file-exists');
+const validFile = require('valid-file');
 const yeoman = require('yeoman-generator');
 const messages = require('./messages');
 const chalk = require('chalk');
@@ -13,7 +13,7 @@ module.exports = yeoman.Base.extend({
 	gitignore() {
 		const gitignore = path.join(this.destinationRoot(), '.gitignore');
 
-		if (fileExists(gitignore)) {
+		if (validFile.sync(gitignore)) {
 			const gitignoreContents = fs.readFileSync(gitignore, 'utf8');
 
 			if (gitignoreContents) {
@@ -48,7 +48,7 @@ module.exports = yeoman.Base.extend({
 	packageJSON() {
 		const packagejson = path.join(this.destinationRoot(), 'package.json');
 
-		if (fileExists(packagejson)) {
+		if (validFile.sync(packagejson)) {
 			const packagejsonContents = fs.readFileSync(packagejson, 'utf8');
 
 			let pkgmsg = messages.exists;
