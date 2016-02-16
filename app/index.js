@@ -34,8 +34,8 @@ module.exports = yeoman.Base.extend({
 					cvMsg = messages.added;
 				}
 
-				this.message += nyMsg(`${chalk.gray('.gitignore >>')} .nyc_output`);
-				this.message += cvMsg(`${chalk.gray('.gitignore >>')} coverage`);
+				this.message += nyMsg(chalk.gray('.gitignore >> ') + '.nyc_output');
+				this.message += cvMsg(chalk.gray('.gitignore >> ') + 'coverage');
 
 				if (newContents !== gitignoreContents) {
 					fs.writeFileSync(gitignore, newContents);
@@ -65,7 +65,7 @@ module.exports = yeoman.Base.extend({
 					pkgmsg = messages.added;
 				}
 
-				this.message += pkgmsg(`${chalk.gray('package.json >>')} ${json.scripts.test}`);
+				this.message += pkgmsg(chalk.gray('package.json >> ') + json.scripts.test);
 
 				let depmsg = messages.exists;
 				if (json.dependencies) {
@@ -77,7 +77,7 @@ module.exports = yeoman.Base.extend({
 					json.dependencies = {nyc: '*'};
 					depmsg = messages.added;
 				}
-				this.message += depmsg(`${chalk.gray('package.json dependencies >>')} nyc: ${json.dependencies.nyc}`);
+				this.message += depmsg(chalk.gray('package.json dependencies >> ') + 'nyc: ' + json.dependencies.nyc);
 
 				fs.writeFileSync(packagejson, JSON.stringify(json, null, 2));
 			}
