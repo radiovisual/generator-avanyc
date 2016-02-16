@@ -13,7 +13,7 @@ $ npm install --global generator-avanyc
 
 ## Usage
 
-From within your AVA project's root directory, run:
+From within your project's root directory, run:
 
 ```
 $ yo avanyc
