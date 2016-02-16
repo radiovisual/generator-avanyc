@@ -1,5 +1,5 @@
 'use strict';
-const chalk = require('chalk');
+var chalk = require('chalk');
 
 module.exports.added = function (str) {
 	return `\n   ${chalk.green('added  ')} ${str}`;
