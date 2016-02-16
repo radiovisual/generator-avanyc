@@ -2,7 +2,7 @@
 
 > [Yeoman](http://yeoman.io/) generator that quickly adds [nyc](https://github.com/bcoe/nyc) test coverage to your [AVA](https://github.com/sindresorhus/ava) projects
 
-[![Build Status](https://travis-ci.org/radiovisual/generator-avanyc.svg?branch=master)](https://travis-ci.org/radiovisual/generator-avanyc) [![Coverage Status](https://coveralls.io/repos/github/radiovisual/valid-file/badge.svg?branch=master)](https://coveralls.io/github/radiovisual/valid-file?branch=master)
+[![Build Status](https://travis-ci.org/radiovisual/generator-avanyc.svg?branch=master)](https://travis-ci.org/radiovisual/generator-avanyc) [![Coverage Status](https://coveralls.io/repos/github/radiovisual/generator-avanyc/badge.svg?branch=master)](https://coveralls.io/github/radiovisual/generator-avanyc?branch=master)
 
 ## Install
 
