@@ -1,7 +1,7 @@
 {
   "name": "generator-avanyc",
   "version": "0.0.0",
-  "description": "Quickly add nyc test coverage to your AVA projects",
+  "description": "Yeoman generator that quickly adds nyc test coverage to your AVA projects",
   "license": "MIT",
   "repository": "radiovisual/generator-avanyc",
   "author": {
@@ -25,7 +25,8 @@
     "test",
     "coverage",
     "yeoman",
-    "generator"
+    "generator",
+    "yo"
   ],
   "dependencies": {
     "valid-file": "0.0.1",
