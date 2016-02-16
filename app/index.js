@@ -1,26 +1,26 @@
 'use strict';
-const validFile = require('valid-file');
-const yeoman = require('yeoman-generator');
-const messages = require('./messages');
-const chalk = require('chalk');
-const path = require('path');
-const fs = require('fs');
+var validFile = require('valid-file');
+var yeoman = require('yeoman-generator');
+var messages = require('./messages');
+var chalk = require('chalk');
+var path = require('path');
+var fs = require('fs');
 
 module.exports = yeoman.Base.extend({
 	init() {
 		this.message = '';
 	},
 	gitignore() {
-		const gitignore = path.join(this.destinationRoot(), '.gitignore');
+		var gitignore = path.join(this.destinationRoot(), '.gitignore');
 
 		if (validFile.sync(gitignore)) {
-			const gitignoreContents = fs.readFileSync(gitignore, 'utf8');
+			var gitignoreContents = fs.readFileSync(gitignore, 'utf8');
 
 			if (gitignoreContents) {
 				let newContents = gitignoreContents;
 
-				const addnycoutput = !/\.nyc_output/.test(gitignoreContents);
-				const addcoverage = !/coverage/.test(gitignoreContents);
+				var addnycoutput = !/\.nyc_output/.test(gitignoreContents);
+				var addcoverage = !/coverage/.test(gitignoreContents);
 
 				let nyMsg = messages.exists;
 				if (addnycoutput) {
@@ -46,14 +46,14 @@ module.exports = yeoman.Base.extend({
 		}
 	},
 	packageJSON() {
-		const packagejson = path.join(this.destinationRoot(), 'package.json');
+		var packagejson = path.join(this.destinationRoot(), 'package.json');
 
 		if (validFile.sync(packagejson)) {
-			const packagejsonContents = fs.readFileSync(packagejson, 'utf8');
+			var packagejsonContents = fs.readFileSync(packagejson, 'utf8');
 
 			let pkgmsg = messages.exists;
 			if (packagejsonContents) {
-				const json = JSON.parse(packagejsonContents);
+				var json = JSON.parse(packagejsonContents);
 
 				if (json.scripts.test) {
 					if (/nyc ava/.test(json.scripts.test) === false) {
