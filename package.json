@@ -1,0 +1,39 @@
+{
+  "name": "generator-avanyc",
+  "version": "0.0.0",
+  "description": "Quickly add nyc test coverage to your AVA projects",
+  "license": "MIT",
+  "repository": "radiovisual/generator-avanyc",
+  "author": {
+    "name": "Michael Wuergler",
+    "email": "wuergler@gmail.com",
+    "url": "numetriclabs.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "app"
+  ],
+  "keywords": [
+    "AVA",
+    "nyc",
+    "test",
+    "coverage",
+    "yeoman",
+    "generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^0.22.5"
+  },
+  "devDependencies": {
+    "ava": "^0.11.0",
+    "pify": "^2.3.0",
+    "xo": "^0.12.1",
+    "yeoman-assert": "^2.1.1",
+    "yeoman-test": "^1.1.0"
+  }
+}
