@@ -1,6 +1,6 @@
 'use strict';
-var validFile = require('valid-file');
 var yeoman = require('yeoman-generator');
+var validFile = require('valid-file');
 var messages = require('./messages');
 var chalk = require('chalk');
 var path = require('path');
