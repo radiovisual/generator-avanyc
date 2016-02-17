@@ -1,6 +1,6 @@
 {
   "name": "generator-avanyc",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Yeoman generator that quickly adds nyc test coverage to your AVA projects",
   "license": "MIT",
   "repository": "radiovisual/generator-avanyc",
