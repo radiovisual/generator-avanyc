@@ -16,4 +16,3 @@ module.exports.error = function (str) {
 module.exports.install = function (str) {
 	return '\n   ' + chalk.yellow('install ') + str + '\n';
 };
-
