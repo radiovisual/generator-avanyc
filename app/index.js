@@ -7,10 +7,10 @@ var path = require('path');
 var fs = require('fs');
 
 module.exports = yeoman.Base.extend({
-	init() {
+	init: function () {
 		this.message = '';
 	},
-	gitignore() {
+	gitignore: function () {
 		var gitignore = path.join(this.destinationRoot(), '.gitignore');
 
 		if (validFile.sync(gitignore)) {
@@ -45,7 +45,7 @@ module.exports = yeoman.Base.extend({
 			this.message += messages.errorMsg('.gitignore not found. Cannot add nyc context.');
 		}
 	},
-	packageJSON() {
+	packageJSON: function () {
 		var packagejson = path.join(this.destinationRoot(), 'package.json');
 
 		if (validFile.sync(packagejson)) {
@@ -85,7 +85,7 @@ module.exports = yeoman.Base.extend({
 			this.message += messages.error('package.json not found. Cannot add nyc context.');
 		}
 	},
-	end() {
+	end: function () {
 		this.message += messages.install('nyc');
 		this.log(this.message);
 		this.npmInstall();
