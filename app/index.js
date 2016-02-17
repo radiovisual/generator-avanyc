@@ -17,18 +17,18 @@ module.exports = yeoman.Base.extend({
 			var gitignoreContents = fs.readFileSync(gitignore, 'utf8');
 
 			if (gitignoreContents) {
-				let newContents = gitignoreContents;
+				var newContents = gitignoreContents;
 
 				var addnycoutput = !/\.nyc_output/.test(gitignoreContents);
 				var addcoverage = !/coverage/.test(gitignoreContents);
 
-				let nyMsg = messages.exists;
+				var nyMsg = messages.exists;
 				if (addnycoutput) {
 					newContents += '\n.nyc_output';
 					nyMsg = messages.added;
 				}
 
-				let cvMsg = messages.exists;
+				var cvMsg = messages.exists;
 				if (addcoverage) {
 					newContents += '\ncoverage';
 					cvMsg = messages.added;
@@ -51,7 +51,7 @@ module.exports = yeoman.Base.extend({
 		if (validFile.sync(packagejson)) {
 			var packagejsonContents = fs.readFileSync(packagejson, 'utf8');
 
-			let pkgmsg = messages.exists;
+			var pkgmsg = messages.exists;
 			if (packagejsonContents) {
 				var json = JSON.parse(packagejsonContents);
 
@@ -67,7 +67,7 @@ module.exports = yeoman.Base.extend({
 
 				this.message += pkgmsg(chalk.gray('package.json >> ') + json.scripts.test);
 
-				let depmsg = messages.exists;
+				var depmsg = messages.exists;
 				if (json.dependencies) {
 					if (!json.dependencies.hasOwnProperty('nyc')) {
 						json.dependencies.nyc = '*';
